@@ -7,10 +7,14 @@ const Users = () => {
     setUsers((prevState) => prevState.filter((user) => user._id !== userID))
   }
   const renderPhrase = (number) => {
+    let str = "человек"
+    if (number > 1 && number < 5) {
+      str = "человека"
+    }
     return (
       <h2>
         <span className="badge bg-primary">
-          {number} человек тусанёт с тобой
+          {number} {str} тусанёт с тобой
         </span>
       </h2>
     )
