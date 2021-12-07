@@ -7,14 +7,18 @@ const Users = () => {
     setUsers((prevState) => prevState.filter((user) => user._id !== userID))
   }
   const renderPhrase = (number) => {
-    let str = "человек"
-    if (number > 1 && number < 5) {
-      str = "человека"
+    let str = "человек тусанёт"
+    const lastNum = Number(number.toString().slice(-1))
+    if (number > 4 && number < 15) {
+      str = "человек тусанут"
+    }
+    if ([2, 3, 4].indexOf(lastNum) >= 0) {
+      str = "человека тусанут"
     }
     return (
       <h2>
         <span className="badge bg-primary">
-          {number} {str} тусанёт с тобой
+          {number} {str} с тобой
         </span>
       </h2>
     )
